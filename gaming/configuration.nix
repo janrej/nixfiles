@@ -56,6 +56,7 @@ systemd = {
 
 # Applications and /etc modifications
 nixpkgs.config.allowUnfree = true;
+programs.steam.enable = true;
 environment = {
     systemPackages = with pkgs; [ 
         
@@ -82,6 +83,17 @@ environment = {
 
         # Browsers
         ungoogled-chromium
+
+        # Gaming
+        steamPackages.steam
+        steamPackages.steam-runtime
+        steamPackages.steamcmd
+        steam-tui
+        protonup-ng
+        protontricks
+        oversteer
+        linuxKernel.packages.linux_6_6.xone
+        linuxKernel.packages.linux_6_6.hid-tmff2
 
         # Streaming
         spotify-tui
@@ -133,15 +145,12 @@ services.xserver = {
         };    
     };
     windowManager = {
-        # awesome = {
-        #     enable = true;
-        # };
         qtile = {
             enable = true;
         };
-        # i3 = {
-        #     enable = true;
-        # };
+        i3 = {
+            enable = true;
+        };
     };
 };
 
