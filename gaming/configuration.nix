@@ -116,6 +116,7 @@ environment = {
         starship
         mc
         htop
+        fastfetch
 
         # Desktop and gui
         i3wsr
@@ -127,7 +128,6 @@ environment = {
         psutils
         dconf
         lm_sensors
-        neofetch
         nerdfonts
         pavucontrol
         xorg.xrandr
