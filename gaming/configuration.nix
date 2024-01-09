@@ -137,7 +137,7 @@ environment = {
         vscodium
 
         # Browsers
-        ungoogled-chromium
+        firefox
 
         # Gaming
         # steam
@@ -186,10 +186,12 @@ services.xserver = {
         defaultSession = "none+qtile";
         setupCommands = lib.mkDefault ''
         ${pkgs.xorg.xrandr}/bin/xrandr \
-          --output DisplayPort-0 --off \
-          --output DisplayPort-1 --primary --mode 2560x1080 --rate 75 \
-          --output DisplayPort-2 --mode 1920x1080 --rate 60 --left-of DisplayPort-1 \
-          --output HDMI-A-0 --off 
+          --output DisplayPort-1-0 --off \
+          --output DisplayPort-1-1 --off \
+          --output DisplayPort-1-2 --off \
+          --output DisplayPort-3 --mode 1920x1080 --rate 60 --left-of HDMI-A-1 \
+          --output HDMI-A-1-0 --mode 2560x1080 --rate 75 \
+          --output HDMI-A-1 --primary --mode 2560x1080 --rate 75
         '';
         sddm = {
             enable = true;
@@ -201,6 +203,9 @@ services.xserver = {
             enable = true;
         };
         i3 = {
+            enable = true;
+        };
+        awesome = {
             enable = true;
         };
     };
