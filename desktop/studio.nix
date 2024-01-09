@@ -4,6 +4,9 @@
 
 environment.systemPackages = with pkgs; [
     
+    # Image manipulation
+    gimp-with-plugins
+
     # Music production
     ardour
 
