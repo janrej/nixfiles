@@ -157,6 +157,15 @@ environment = {
         mpv
         cli-visualizer
 
+        # Image manipulation
+        gimp-with-plugins
+
+        # Music production
+        ardour
+
+        # Video editing
+        libsForQt5.kdenlive
+
     ];
 
     etc = {
