@@ -108,6 +108,7 @@ systemd = {
 # Applications and /etc modifications
 nixpkgs.config.allowUnfree = true;
 programs.steam.enable = true;
+hardware.xone.enable = true;
 environment = {
     systemPackages = with pkgs; [ 
         
@@ -142,9 +143,9 @@ environment = {
         # Gaming
         # steam
         # steamPackages.steam
-        steamPackages.steam-runtime
-        steamPackages.steamcmd
-        steam-tui
+        # steamPackages.steam-runtime
+        # steamPackages.steamcmd
+        # steam-tui
         protonup-ng
         protontricks
         oversteer
@@ -195,12 +196,8 @@ services.xserver = {
         defaultSession = "none+qtile";
         setupCommands = lib.mkDefault ''
         ${pkgs.xorg.xrandr}/bin/xrandr \
-          --output DisplayPort-1-0 --off \
-          --output DisplayPort-1-1 --off \
-          --output DisplayPort-1-2 --off \
-          --output DisplayPort-3 --mode 1920x1080 --rate 60 --left-of HDMI-A-1 \
-          --output HDMI-A-1-0 --mode 2560x1080 --rate 75 \
-          --output HDMI-A-1 --primary --mode 2560x1080 --rate 75
+          --output DisplayPort-0 --mode 1920x1080 --rate 60 --left-of HDMI-A-0 \
+          --output HDMI-A-0 --primary --mode 2560x1080 --rate 75
         '';
         sddm = {
             enable = true;
@@ -212,9 +209,6 @@ services.xserver = {
             enable = true;
         };
         i3 = {
-            enable = true;
-        };
-        awesome = {
             enable = true;
         };
     };
