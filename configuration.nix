@@ -1,5 +1,7 @@
 { lib, config, pkgs, ... }:
 
+{
+
 imports = [ 
     # Include hardware scan.
     ./hardware-configuration.nix
@@ -86,7 +88,7 @@ users.users = {
         createHome = true;
         homeMode = "777";
         home = "/home/jannik";
-        description = "jannik"
+        description = "jannik";
         extraGroups = [ "wheel" "video" "audio" "disk" ];
     };
 };
