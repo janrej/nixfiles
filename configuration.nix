@@ -67,12 +67,12 @@ networking = {
     useDHCP = false;
     defaultGateway = {
         address = "192.168.1.1";
-        interface = "enp11s0";
+        interface = "enp8s0";
     };
     nameservers = [ "208.67.222.222" "208.67.220.220" ];
     wireless.enable = false;
     interfaces = {
-        enp11s0 = {
+        enp8s0 = {
             useDHCP = true;
         };
     };
@@ -145,7 +145,6 @@ environment = {
 
         # Gaming
         protonup-ng
-        protontricks
 
         # Streaming
 				spotify
@@ -195,8 +194,8 @@ services.xserver = {
         defaultSession = "none+qtile";
         setupCommands = lib.mkDefault ''
         ${pkgs.xorg.xrandr}/bin/xrandr \
-          --output DisplayPort-0 --mode 1920x1080 --rate 60 --left-of HDMI-A-0 \
-          --output HDMI-A-0 --primary --mode 2560x1080 --rate 75
+          --output DP-2 --primary --mode 1920x1080 --rate 60 --left-of HDMI-1 \
+          --output HDMI-1 --mode 2560x1080 --rate 75
         '';
         sddm = {
             enable = true;
